@@ -1,0 +1,6 @@
+git
+git-client
+git-changelog
+git-parameter
+maven-plugin
+subversion
