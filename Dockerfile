@@ -28,6 +28,7 @@ RUN apt-get update -qq && apt-get install -qqy \
 #RUN add-apt-repository --yes ppa:openjdk-r/ppa
 
 #RUN apt-get update
+RUN apt-get install -y openjdk-7-jdk
 RUN apt-get install -y openjdk-8-jdk
 RUN ln -s /usr/bin/fromdos /usr/bin/dos2unix
 

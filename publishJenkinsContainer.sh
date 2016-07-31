@@ -11,9 +11,10 @@ logFile=build.log
 if [ "$registry" = "" ]
 then
   echo "usage: command <registry host>"
-  registry=myd-vm02816.hpswlabs.adapps.hp.com
+  registry=privatejenkins/privatejenkins
 fi
-dockerJenkins=$registry':5000/jenkins-docker'
+#dockerJenkins=$registry':5000/jenkinsdocker'
+dockerJenkins=$registry
 containerName=`cat $logFile|grep "Successfully built"|gawk '{ print $3 }'`
 if [ "$containerName" = "" ]
 then
