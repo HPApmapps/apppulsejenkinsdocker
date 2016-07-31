@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <hudson>
   <disabledAdministrativeMonitors/>
-  <version>1.625.3</version>
+  <version>1.651.2</version>
   <numExecutors>8</numExecutors>
   <mode>NORMAL</mode>
   <useSecurity>true</useSecurity>
@@ -14,7 +14,12 @@
   <jdks>
     <jdk>
       <name>OPENJDK_1.8</name>
-      <home>/usr/lib/jvm/java-1.8.0-openjdk-amd64</home>
+      <home>/usr/lib/jvm/java-1.8.0-openjdk</home>
+      <properties/>
+    </jdk>
+    <jdk>
+      <name>OPENJDK_1.7</name>
+      <home>/usr/lib/jvm/java-7-openjdk-amd64</home>
       <properties/>
     </jdk>
   </jdks>

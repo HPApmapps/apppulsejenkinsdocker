@@ -2,6 +2,7 @@ FROM jenkins
 # if we want to install via apt
 ENV http_proxy="http://web-proxy.il.hpecorp.net:8080/"
 ENV https_proxy="http://web-proxy.il.hpecorp.net:8080/"
+ENV no_proxy="127.0.0.1,localhost,hpeswlab.net,mydyumserver,mydyumserver.hpswlabs.adapps.hp.com,*.hp.com,16.59.0.0,hpswlabs.adapps.hp.com:80"
 COPY plugins.txt /usr/share/jenkins/plugins.txt
 COPY plugins2.txt /usr/share/jenkins/plugins2.txt
 RUN /usr/local/bin/plugins.sh /usr/share/jenkins/plugins2.txt
@@ -18,6 +19,7 @@ RUN apt-get update -qq && apt-get install -qqy \
     vim \
     tofrodos \
     maven \
+    net-tools \
 #    software-properties-common \
 #    python-software-properties \
     ruby-dev \
@@ -36,7 +38,6 @@ RUN ln -s /usr/bin/fromdos /usr/bin/dos2unix
 #RUN ln -s /usr/bin/xvfb-chromium /usr/bin/google-chrome
 #RUN ln -s /usr/bin/xvfb-chromium /usr/bin/chromium-browser
 #UI installs
-
 RUN ln -s /usr/bin/nodejs /usr/bin/node
 RUN npm install -g grunt-cli@1.2.0
 RUN npm install -g bower@1.7.9
