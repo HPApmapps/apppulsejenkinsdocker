@@ -1,8 +1,5 @@
 FROM jenkins
 # if we want to install via apt
-ENV http_proxy="http://web-proxy.il.hpecorp.net:8080/"
-ENV https_proxy="http://web-proxy.il.hpecorp.net:8080/"
-ENV no_proxy="127.0.0.1,localhost,hpeswlab.net,mydyumserver,mydyumserver.hpswlabs.adapps.hp.com,*.hp.com,16.59.0.0,hpswlabs.adapps.hp.com:80"
 COPY plugins.txt /usr/share/jenkins/plugins.txt
 COPY plugins2.txt /usr/share/jenkins/plugins2.txt
 RUN /usr/local/bin/plugins.sh /usr/share/jenkins/plugins2.txt
@@ -90,3 +87,6 @@ RUN rm -rf /var/jenkins_home/credentials.xml
 
 #USER jenkins
 # drop back to the regular jenkins user - good practice
+ENV http_proxy="http://web-proxy.il.hpecorp.net:8080/"
+ENV https_proxy="http://web-proxy.il.hpecorp.net:8080/"
+ENV no_proxy="127.0.0.1,localhost,hpeswlab.net,mydyumserver,mydyumserver.hpswlabs.adapps.hp.com,*.hp.com,16.59.0.0,hpswlabs.adapps.hp.com:80"
