@@ -37,3 +37,4 @@ jobConfigHistory
 ssh-agent
 structs
 slack
+parameterized-trigger
