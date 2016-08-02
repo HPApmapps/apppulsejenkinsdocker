@@ -16,9 +16,11 @@ RUN apt-get update -qq && apt-get install -qqy \
     vim \
     tofrodos \
     maven \
-    net-tools \
 #    software-properties-common \
-#    python-software-properties \
+#    python-software-properties \	
+    net-tools 
+	
+RUN apt-get install -qqy \
     ruby-dev \
     ruby
 
