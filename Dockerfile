@@ -13,15 +13,16 @@ RUN apt-get update -qq && apt-get install -qqy \
     git-core \
     nodejs \
     npm \
-    vim \
-    tofrodos \
-    maven \
+    vim
+
 #    software-properties-common \
-#    python-software-properties \	
-    net-tools 
+#    python-software-properties \	 
 	
-RUN apt-get install -qqy \
-    ruby-dev \
+RUN apt-get install -qqy \    
+	net-tools \
+	tofrodos \
+	maven \
+	ruby-dev \
     ruby
 
 #RUN add-apt-repository --yes ppa:openjdk-r/ppa
