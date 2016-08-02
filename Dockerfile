@@ -90,4 +90,5 @@ RUN rm -rf /var/jenkins_home/credentials.xml
 ENV http_proxy="http://web-proxy.il.hpecorp.net:8080/"
 ENV https_proxy="http://web-proxy.il.hpecorp.net:8080/"
 ENV no_proxy="127.0.0.1,localhost,hpeswlab.net,mydyumserver,mydyumserver.hpswlabs.adapps.hp.com,*.hp.com,16.59.0.0,hpswlabs.adapps.hp.com:80"
-ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk/bin/java
+#ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk
+RUN sed -i 's# <proxies># <proxies>\n    <proxy>\n        <id>HPQNETPROXY</id>\n        <active>true</active>\n        <host>web-proxy.bbn.hpecorp.net</host>\n        <port>8080</port>\n        <nonProxyHosts>*.devlab.ad</nonProxyHosts>\n    </proxy>\n#' /usr/share/maven/conf/settings.xml
