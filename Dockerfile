@@ -6,7 +6,7 @@ RUN /usr/local/bin/plugins.sh /usr/share/jenkins/plugins2.txt
 RUN /usr/local/bin/plugins.sh /usr/share/jenkins/plugins.txt
 USER root
 #Add OpenJdk repo
-RUN echo deb http://http.debian.net/debian jessie-backports main >> /etc/apt/sources.list:
+RUN echo deb http://http.debian.net/debian jessie-backports main >> /etc/apt/sources.list
 #Install 3rd party
 
 RUN apt-get update -qq && apt-get install -qqy \
