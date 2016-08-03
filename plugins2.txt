@@ -4,3 +4,5 @@ git-changelog
 git-parameter
 maven-plugin
 subversion
+notification
+
