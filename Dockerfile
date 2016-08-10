@@ -63,7 +63,7 @@ RUN echo DOCKER_OPTS="\"--insecure-registry myd-vm02816.hpswlabs.adapps.hp.com:5
 #Edit hosts file
 #RUN cat /etc/hosts |sed 's/localhost/localhost mydev.devdomain.com/'>/etc/hosts
 #RUN cat /etc/bash.bashrc |sed "s/PS1='/PS1='Docker_/">/etc/bash.bashrc
-RUN echo "cd /var/jenkins_home" > /etc/bash.bashrc
+#RUN echo "cd /var/jenkins_home" > /etc/bash.bashrc
 
 
 #Install Maven 3rd party
@@ -93,5 +93,7 @@ RUN rm -rf /var/jenkins_home/credentials.xml
 ENV http_proxy="http://web-proxy.il.hpecorp.net:8080/"
 ENV https_proxy="http://web-proxy.il.hpecorp.net:8080/"
 ENV no_proxy="127.0.0.1,localhost,hpeswlab.net,mydyumserver,mydyumserver.hpswlabs.adapps.hp.com,*.hp.com,16.59.0.0,hpswlabs.adapps.hp.com:80"
+#ENV M2_HOME="/usr/share/maven"
+#ENV M2="/usr/share/maven"
 #ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk
 RUN sed -i 's# <proxies># <proxies>\n    <proxy>\n        <id>HPQNETPROXY</id>\n        <active>true</active>\n        <host>web-proxy.bbn.hpecorp.net</host>\n        <port>8080</port>\n        <nonProxyHosts>*.devlab.ad</nonProxyHosts>\n    </proxy>\n#' /usr/share/maven/conf/settings.xml
