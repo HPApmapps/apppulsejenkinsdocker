@@ -21,10 +21,13 @@ RUN apt-get install -qqy \
 RUN apt-get install -qqy \    
 	net-tools \
 	tofrodos \
-	maven \
+	maven
+
+RUN apt-get install -qqy \    
 	ruby-dev \
     ruby
 
+	
 #RUN add-apt-repository --yes ppa:openjdk-r/ppa
 
 #RUN apt-get update
