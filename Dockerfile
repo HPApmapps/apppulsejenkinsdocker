@@ -10,7 +10,7 @@ RUN echo deb http://http.debian.net/debian jessie-backports main >> /etc/apt/sou
 #Install 3rd party
 #Install nodejs6
 RUN curl -sL https://deb.nodesource.com/setup_6.x | bash
-RUN apt-get update -qq && apt-get install -qqy \
+RUN apt-get install -qqy \
     git-core \
     nodejs \
     npm \
