@@ -39,7 +39,7 @@ RUN ln -s /usr/bin/fromdos /usr/bin/dos2unix
 #RUN ln -s /usr/bin/xvfb-chromium /usr/bin/google-chrome
 #RUN ln -s /usr/bin/xvfb-chromium /usr/bin/chromium-browser
 #UI installs
-RUN ln -s /usr/bin/nodejs /usr/bin/node
+#RUN ln -s /usr/bin/nodejs /usr/bin/node
 RUN npm install -g grunt-cli@1.2.0
 RUN npm install -g bower@1.7.9
 #RUN npm install -g phantomjs-prebuilt
