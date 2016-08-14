@@ -52,10 +52,12 @@ RUN gem install compass
 #RUN apt-get update
 #RUN apt-get install -y docker-engine
 # Install Docker from Docker Inc. repositories.
-RUN curl -sSL https://get.docker.com/ | sh
-RUN echo export http_proxy="http://web-proxy.il.hpecorp.net:8080/" >> /etc/default/docker
-RUN echo export https_proxy="http://web-proxy.il.hpecorp.net:8080/" >> /etc/default/docker
-RUN echo DOCKER_OPTS="\"--insecure-registry myd-vm02816.hpswlabs.adapps.hp.com:5000\"" >> /etc/default/docker
+
+#RUN curl -sSL https://get.docker.com/ | sh
+#RUN echo export http_proxy="http://web-proxy.il.hpecorp.net:8080/" >> /etc/default/docker
+#RUN echo export https_proxy="http://web-proxy.il.hpecorp.net:8080/" >> /etc/default/docker
+#RUN echo DOCKER_OPTS="\"--insecure-registry myd-vm02816.hpswlabs.adapps.hp.com:5000\"" >> /etc/default/docker
+
 # Define additional metadata for our image.
 #VOLUME /var/lib/docker
 
