@@ -6,4 +6,4 @@ maven-plugin
 subversion
 notification
 build-name-setter
-
+text-file-operations
