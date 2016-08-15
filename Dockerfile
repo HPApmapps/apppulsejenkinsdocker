@@ -24,9 +24,9 @@ RUN apt-get install -qqy \
 	maven
 
 RUN apt-get install -qqy \    
+	libgmp-dev \
 	ruby-dev \
     ruby
-
 	
 #RUN add-apt-repository --yes ppa:openjdk-r/ppa
 
