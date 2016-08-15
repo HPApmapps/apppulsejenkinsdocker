@@ -47,7 +47,7 @@ RUN npm install -g grunt-cli@1.2.0
 RUN npm install -g bower@1.7.9
 #RUN npm install -g phantomjs-prebuilt
 RUN npm install -g phantomjs@1.9.18
-RUN gem install compass
+RUN gem install compass@1.0.3
 #Install docker
 #RUN apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
 #RUN echo deb http://apt.dockerproject.org/repo ubuntu-trusty main >/etc/apt/sources.list.d/docker.list
