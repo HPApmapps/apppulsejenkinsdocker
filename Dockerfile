@@ -13,8 +13,8 @@ RUN curl -sL https://deb.nodesource.com/setup_6.x | bash
 RUN apt-get install -qqy nodejs
 RUN apt-get update -qq && apt-get install -qqy \
     git-core \
-#    nodejs \
-#    npm \
+    nodejs \
+    npm \
     vim
 
 #    software-properties-common \
@@ -23,9 +23,7 @@ RUN apt-get update -qq && apt-get install -qqy \
 RUN apt-get install -qqy \    
 	net-tools \
 	tofrodos \
-	maven
-
-RUN apt-get install -qqy \    
+	maven \
 	ruby-dev \
 	ruby
 	
@@ -43,13 +41,18 @@ RUN ln -s /usr/bin/fromdos /usr/bin/dos2unix
 #RUN ln -s /usr/bin/xvfb-chromium /usr/bin/google-chrome
 #RUN ln -s /usr/bin/xvfb-chromium /usr/bin/chromium-browser
 #UI installs
-#RUN ln -s /usr/bin/nodejs /usr/bin/node
+RUN ln -s /usr/bin/nodejs /usr/bin/node
 RUN npm install -g grunt-cli@1.2.0
 RUN npm install -g bower@1.7.9
 #RUN npm install -g phantomjs-prebuilt
 RUN npm install -g phantomjs@1.9.18
-RUN gem update --system
-RUN gem install compass --version 1.0.3
+#RUN gem update --system
+RUN gem install compass
+
+#Install nodejs6
+RUN curl -sL https://deb.nodesource.com/setup_6.x | bash
+RUN apt-get install -qqy nodejs
+
 #Install docker
 #RUN apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
 #RUN echo deb http://apt.dockerproject.org/repo ubuntu-trusty main >/etc/apt/sources.list.d/docker.list
@@ -73,7 +76,7 @@ RUN gem install compass --version 1.0.3
 #RUN echo "cd /var/jenkins_home" > /etc/bash.bashrc
 
 
-#Install Maven 3rd party
+#Configure Jenkins
 COPY bin/ /var/jenkins_home/bin/
 COPY resources/proxy.xml /var/jenkins_home/proxy.xml
 COPY resources/config.xml /var/jenkins_home/config.xml
