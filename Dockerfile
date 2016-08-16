@@ -8,9 +8,6 @@ USER root
 #Add OpenJdk repo
 RUN echo deb http://http.debian.net/debian jessie-backports main >> /etc/apt/sources.list
 #Install 3rd party
-#Install nodejs6
-RUN curl -sL https://deb.nodesource.com/setup_6.x | bash
-RUN apt-get install -qqy nodejs
 RUN apt-get update -qq && apt-get install -qqy \
     git-core \
     nodejs \
