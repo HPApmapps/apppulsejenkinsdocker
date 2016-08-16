@@ -11,8 +11,10 @@ RUN echo deb http://http.debian.net/debian jessie-backports main >> /etc/apt/sou
 #Install nodejs6
 RUN curl -sL https://deb.nodesource.com/setup_6.x | bash
 RUN apt-get install -qqy nodejs
-RUN apt-get install -qqy \
+RUN apt-get update -qq && apt-get install -qqy \
     git-core \
+#    nodejs \
+#    npm \
     vim
 
 #    software-properties-common \
@@ -24,7 +26,6 @@ RUN apt-get install -qqy \
 	maven
 
 RUN apt-get install -qqy \    
-	libgmp-dev \
 	ruby-dev \
 	ruby
 	
