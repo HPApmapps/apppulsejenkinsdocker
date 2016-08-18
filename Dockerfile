@@ -69,8 +69,8 @@ RUN apt-get install -qqy nodejs
 #RUN gem install compass:0.12.2
 #Edit hosts file
 #RUN cat /etc/hosts |sed 's/localhost/localhost mydev.devdomain.com/'>/etc/hosts
-#RUN cat /etc/bash.bashrc |sed "s/PS1='/PS1='Docker_/">/etc/bash.bashrc
-#RUN echo "cd /var/jenkins_home" > /etc/bash.bashrc
+RUN cat /etc/bash.bashrc |sed "s/PS1='/PS1='Docker_/" | tee /etc/bash.bashrc
+RUN echo "cd /var/jenkins_home" >> /etc/bash.bashrc
 
 
 #Configure Jenkins
